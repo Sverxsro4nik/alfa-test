@@ -30,13 +30,9 @@ const config = {
   },
   devtool: 'source-map',
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.BACKEND_HOST': JSON.stringify(process.env.BACKEND_HOST),
-    }),
     new ForkTsCheckerWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/assets/icons/icon-logo.png',
     }),
     new MiniCssExtractPlugin(),
   ],

@@ -1,0 +1,13 @@
+main h2 {
+    text-align: center;
+    margin: 2rem 0;
+}
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(90% - 4px);
+    width: calc(100% - 4px);
+    gap: 2rem;
+    align-items: center;
+    margin: 0 auto;
+}

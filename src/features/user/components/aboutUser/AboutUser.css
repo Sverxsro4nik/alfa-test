@@ -1,0 +1,33 @@
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid lawngreen;
+    border-radius: .4rem;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.likeButton{
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+.deleteButton {
+    display: inline-block;
+    padding: .3rem 1.3rem;
+    margin: 1.5rem 0;
+    background-color: aquamarine;
+    border: none;
+    border-radius: .3rem;
+}
+.user h2 {
+    margin-bottom: .5rem;
+}
+.user img {
+    margin-top: 0;
+}

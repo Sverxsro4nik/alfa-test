@@ -3,9 +3,11 @@ import axios from 'axios';
 import {RootState, store} from "./store";
 
 export interface User {
+    id: number;
     avatar: string;
-    firstName: string;
-    lastName: string;
+    first_name: string;
+    last_name: string;
+    like: boolean;
 }
 
 export const fetchData = createAsyncThunk(
@@ -27,7 +29,7 @@ const initialState = usersAdapter.getInitialState<initialState>({
 });
 
 const usersReducer = createSlice({
-    name: 'cards',
+    name: 'users',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
@@ -35,7 +37,8 @@ const usersReducer = createSlice({
             state.isLoading = true;
             state.loadingError = null;
         }).addCase(fetchData.fulfilled, (state, { payload }) => {
-            usersAdapter.addMany(state, payload);
+            const userWithLikes = payload.map((item) => ({...item, like: false}))
+            usersAdapter.addMany(state, userWithLikes);
             state.isLoading = false;
             state.loadingError = null;
         }).addCase(fetchData.rejected, (state, {error}) => {
@@ -46,6 +49,6 @@ const usersReducer = createSlice({
 });
 
 // @ts-ignore
-export const selectors = usersAdapter.getSelectors((state) => state.cards);
+export const selectors = usersAdapter.getSelectors((state) => state.users);
 export const getUsers = (state: RootState) => selectors.selectAll(state);
 export default usersReducer.reducer;

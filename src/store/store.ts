@@ -3,7 +3,7 @@ import usersReducer from './usersSlice';
 import {useDispatch} from "react-redux";
 export const store = configureStore(({
     reducer: {
-        cards: usersReducer,
+        users: usersReducer,
     },
 }));
 

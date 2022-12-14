@@ -1,19 +1,18 @@
 import React, {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState, store, useAppDispatch} from "./store/store";
-import {fetchData, getUsers, User} from "./store/usersSlice";
-import Users from "./pages";
+import {useSelector} from "react-redux";
+import {useAppDispatch} from "./store/store";
+import {fetchData, getUsers} from "./store/usersSlice";
+import UsersPage from "./pages";
 
 const App = () => {
     const dispatch = useAppDispatch();
     const users = useSelector(getUsers);
-    console.log(users);
     useEffect(() => {
         dispatch(fetchData());
     }, []);
     return <div>
         {
-            users.length === 0 ? "Идет загрузка" : <Users users={users} />
+            users.length === 0 ? "Идет загрузка" : <UsersPage users={users} />
         }
     </div>
 }

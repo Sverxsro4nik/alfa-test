@@ -31,7 +31,9 @@ const initialState = usersAdapter.getInitialState<initialState>({
 const usersReducer = createSlice({
     name: 'users',
     initialState,
-    reducers: {},
+    reducers: {
+        removeUser: usersAdapter.removeOne,
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchData.pending, (state) => {
             state.isLoading = true;
@@ -51,4 +53,5 @@ const usersReducer = createSlice({
 // @ts-ignore
 export const selectors = usersAdapter.getSelectors((state) => state.users);
 export const getUsers = (state: RootState) => selectors.selectAll(state);
+export const { removeUser } = usersReducer.actions;
 export default usersReducer.reducer;

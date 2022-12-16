@@ -1,13 +1,27 @@
 main h2 {
-    text-align: center;
-    margin: 2rem 0;
+  text-align: center;
+  margin: 2rem 0;
+}
+.usersCards {
+  display: flex;
+  flex-direction: column;
 }
 .users {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: calc(90% - 4px);
-    width: calc(100% - 4px);
-    gap: 2rem;
-    align-items: center;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(90% - 4px);
+  width: calc(100% - 4px);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.showLiked {
+  display: block;
+  padding: 1rem 0.5rem;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+  align-self: end;
+  margin-right: 4rem;
 }

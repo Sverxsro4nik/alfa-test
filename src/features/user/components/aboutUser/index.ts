@@ -1,2 +1,2 @@
-import AboutUser from "./AboutUser";
+import AboutUser from './AboutUser';
 export default AboutUser;

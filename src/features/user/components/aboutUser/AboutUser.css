@@ -1,33 +1,39 @@
 .user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid lawngreen;
-    border-radius: .4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid lawngreen;
+  border-radius: 0.4rem;
 }
+
+.liked svg path {
+  fill: #8289e3;
+  stroke: #081c6e;
+}
+
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.likeButton{
-    border: none;
-    background-color: transparent;
-    font-size: 2rem;
-    margin-top: 1rem;
+.likeButton {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 .deleteButton {
-    display: inline-block;
-    padding: .3rem 1.3rem;
-    margin: 1.5rem 0;
-    background-color: aquamarine;
-    border: none;
-    border-radius: .3rem;
+  display: inline-block;
+  padding: 0.3rem 1.3rem;
+  margin: 1.5rem 0;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 0.3rem;
 }
 .user h2 {
-    margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .user img {
-    margin-top: 0;
+  margin-top: 0;
 }

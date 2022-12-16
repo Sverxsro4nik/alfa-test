@@ -1,31 +1,46 @@
-import React, {FC} from "react";
-import {User} from "../store/usersSlice";
-import AboutUser from "../features/user/components/aboutUser";
+import React, { FC, useState } from 'react';
+import { removeUser, User } from '../features/user/usersSlice';
+import AboutUser from '../features/user/components/aboutUser';
 import './UsersPage.css';
+import { useAppDispatch } from '../store/store';
 
 interface UsersProps {
-    users: User[];
+  users: User[];
 }
 
-const UsersPage: FC<UsersProps> = ({users}) => {
-    return(
-        <main className="usersCards">
-            <h2>Список пользователей</h2>
-            <div className="users">
-                {
-                    users.map((user) => <div className="user" key={user.id}>
-                        <AboutUser
-                            id={user.id}
-                            avatar={user.avatar}
-                            first_name={user.first_name}
-                            last_name={user.last_name}
-                            like={user.like}
-                        />
-                    </div>)
-                }
-            </div>
-        </main>
-    )
-}
+const UsersPage: FC<UsersProps> = ({ users }) => {
+  const dispatch = useAppDispatch();
+  const [showLiked, setShowLiked] = useState<boolean>(false);
+  const showHandler = () => {
+    setShowLiked(!showLiked);
+  };
+  const removeHandler = (id: number) => {
+    console.log('click');
+    dispatch(removeUser(id));
+  };
+  return (
+    <main className="usersCards">
+      <h2>Список пользователей</h2>
+      <button className="showLiked" onClick={showHandler}>
+        Отмеченные пользователи
+      </button>
+      <div className="users">
+        {showLiked
+          ? users
+              .filter((user) => user.like)
+              .map((user) => (
+                <div className="user" key={user.id}>
+                  <AboutUser user={user} removeHandler={removeHandler} />
+                </div>
+              ))
+          : users.map((user) => (
+              <div className="user" key={user.id}>
+                <AboutUser user={user} removeHandler={removeHandler} />
+              </div>
+            ))}
+      </div>
+    </main>
+  );
+};
 
 export default UsersPage;

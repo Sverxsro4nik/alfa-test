@@ -1,0 +1,76 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid lawngreen;
+  border-radius: 0.4rem;
+}
+
+.liked svg path {
+  fill: #8289e3;
+  stroke: #081c6e;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.likeButton {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.deleteButton {
+  display: inline-block;
+  padding: 0.3rem 1.3rem;
+  margin: 1.5rem 0;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 0.3rem;
+}
+.user h2 {
+  margin-bottom: 0.5rem;
+}
+.user img {
+  margin-top: 0;
+}
+
+main h2 {
+  text-align: center;
+  margin: 2rem 0;
+}
+.usersCards {
+  display: flex;
+  flex-direction: column;
+}
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(90% - 4px);
+  width: calc(100% - 4px);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.showLiked {
+  display: block;
+  padding: 1rem 0.5rem;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+  align-self: end;
+  margin-right: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*# sourceMappingURL=main.css.map*/

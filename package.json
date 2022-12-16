@@ -1,5 +1,6 @@
 {
   "name": "alfa-test",
+  "homepage": "https://sverxsro4nik.github.io/alfa-test/index.html",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -7,6 +8,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "webpack --mode production",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
@@ -22,11 +25,11 @@
   "bugs": {
     "url": "https://github.com/Sverxsro4nik/alfa-test/issues"
   },
-  "homepage": "https://github.com/Sverxsro4nik/alfa-test#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.2.1",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
